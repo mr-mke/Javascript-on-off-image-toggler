@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>on-off flip switch</title>
+</head>
+<body>
+<center>
+<form method='get'>
+<h3>Demo of an on/off toggle</h3>
+<table><tr><td valign='middle'>Click on image to change mode:</td><td valign='middle'><img id='switch' src='images/on.png' onclick='flip();'></td></tr></table>
+<input type='hidden' name='selector' value='on' id='selector'>
+<br>
+<button type='submit'>Submit</button>
+</form>
+</center>
+<script>
+var mode='on';
+var on = new Image();
+var off = new Image();
+on.src='images/on.png';
+off.src='images/off.png';
+function flip(){
+    if(mode=='off'){
+        mode='on';
+        document.getElementById('switch').src=on.src;
+    }else{
+        mode='off';
+        document.getElementById('switch').src=off.src;
+    }
+    document.getElementById('selector').value=mode;
+}
+</script>
+</body>
+</html>
